@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <h2>Profile</h2>
+    <!-- {% if user.path %}
+    <img src="{{ url_for('static', filename=user.path) }}" alt="Profile Picture" />
+    {% endif %} -->
+
+    <form method="POST" action="/profile"  enctype="multipart/form-data">
+        <p>{{ error }}</p>
+        <label for="Username">Username:</label>
+        <input type="text" name="username" value="{{user.username}}" required><br>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" value="{{user.email}}" disabled required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" value="" required><br>
+
+        <!-- <label for="pic">Profile Picture:</label>
+        <input type = "file" name = "pic" /> <br> -->
+        <input type="submit" value="Update">
+    </form>
+
+    <a href="/logout">Logout</a>
+</body>
+</html>
